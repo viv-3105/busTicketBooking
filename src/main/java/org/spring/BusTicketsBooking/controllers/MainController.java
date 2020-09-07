@@ -86,14 +86,12 @@ public class MainController {
 
 	@GetMapping("/listOfPassengers")
 	public String listOfPassengersGet(Model model) {
-		
 		return passengerRespository.findAll().toString();
 	}
 
 	@GetMapping("/delete/{number}")
 	public String deleteGet(@PathVariable("number") int numberPassenger) {
 		passengerRespository.delete(numberPassenger);
-		
 		return passengerRespository.findAll().toString();
 	}
 
